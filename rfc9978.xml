@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="US-ASCII"?>
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes" ?>
 <?rfc sortrefs="yes" ?>
@@ -9,14 +15,11 @@
 <?rfc inline="yes"?>
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
-<rfc
-    category="exp"
-    docName="draft-ietf-bfd-stability-21"
-    ipr="trust200902"
-    consensus="true"
-    submissionType="IETF">
+<rfc category="exp" docName="draft-ietf-bfd-stability-21" ipr="trust200902" consensus="true" submissionType="IETF" tocInclude="true" symRefs="true" sortRefs="true" tocDepth="3" version="3">
+  <!-- xml2rfc v2v3 conversion 3.31.0 -->
   <front>
     <title abbrev="BFD Stability">BFD Stability</title>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-bfd-stability-21"/>
     <author fullname="Ashesh Mishra" initials="A" surname="Mishra">
       <organization>Aalyria Technologies</organization>
       <address>
@@ -32,10 +35,7 @@
         <uri/>
       </address>
     </author>
-
-    <author fullname="Mahesh Jethanandani"
-	    initials="M"
-	    surname="Jethanandani">
+    <author fullname="Mahesh Jethanandani" initials="M" surname="Jethanandani">
       <organization>Arrcus, Inc.</organization>
       <address>
         <postal>
@@ -46,11 +46,9 @@
           <country>USA</country>
         </postal>
         <phone/>
-        <facsimile/>
         <email>mjethanandani@gmail.com</email>
       </address>
     </author>
-
     <author fullname="Ankur Saxena" initials="A" surname="Saxena">
       <organization>Ciena Corporation</organization>
       <address>
@@ -62,12 +60,10 @@
           <country>USA</country>
         </postal>
         <phone/>
-        <facsimile/>
         <email>ankurpsaxena@gmail.com</email>
         <uri>www.ciena.com</uri>
       </address>
     </author>
-
     <author fullname="Santosh Pallagatti" initials="S" surname="Pallagatti">
       <organization>Zscaler</organization>
       <address>
@@ -79,12 +75,10 @@
           <country>India</country>
         </postal>
         <phone/>
-        <facsimile/>
         <email>santosh.pallagatti@gmail.com</email>
         <uri/>
       </address>
     </author>
-
     <author fullname="Mach Chen" initials="M" surname="Chen">
       <organization>Huawei</organization>
       <address>
@@ -96,13 +90,11 @@
           <country/>
         </postal>
         <phone/>
-        <facsimile/>
         <email>mach.chen@huawei.com</email>
         <uri/>
       </address>
     </author>
     <date/>
-
     <abstract>
       <t>
 	This document describes extensions to the Bidirectional
@@ -111,16 +103,13 @@
 	the detection of BFD packet loss.</t>
     </abstract>
   </front>
-
   <middle>
-    <section title="Introduction">
-      <t>The Bidirectional Forwarding Detection (<xref
-      target="RFC5880">BFD)</xref> protocol operates by transmitting and
+    <section>
+      <name>Introduction</name>
+      <t>The Bidirectional Forwarding Detection (<xref target="RFC5880">BFD)</xref> protocol operates by transmitting and
       receiving BFD control packets, generally at high frequency, over the
       datapath being monitored. In order to prevent significant data loss due
-      to a datapath failure, BFD session detection time as defined in <xref
-      target="RFC5880">BFD</xref> is set to the smallest feasible value.</t>
-
+      to a datapath failure, BFD session detection time as defined in <xref target="RFC5880">BFD</xref> is set to the smallest feasible value.</t>
       <t>
 	A <xref target="RFC5880">BFD</xref> session will remain in the
 	Up state as long as it receives at least one BFD packet within the
@@ -134,62 +123,54 @@
 	This document proposes an experimental mechanism to detect
 	lost packets in a BFD session in addition to the datapath
 	fault detection mechanisms of BFD.  Such a mechanism, combined
-	with 'received-packet-count' defined in the <xref
-	target="RFC9314">YANG Data Model for Bidrectional Forward
+	with 'received-packet-count' defined in the <xref target="RFC9314">YANG Data Model for Bidrectional Forward
 	Detection (BFD)</xref> permits operators to measure the
 	stability of BFD sessions. The details of the motivation for
-	experimental status can be found in <xref
-	target="experimental-status"/>. Implementations may also do
+	experimental status can be found in <xref target="experimental-status"/>. Implementations may also do
 	additional analysis of the packet loss over a time
 	interval. Such an analysis is outside the scope of this
 	document.
       </t>
-
       <t>
 	This document does not propose any BFD extension to measure
 	data traffic loss or delay on a link or tunnel, and the scope
 	is limited to BFD packets.
       </t>
-
-      <section title="Note to the RFC Editor">
-	<t>
+      <section>
+        <name>Note to the RFC Editor</name>
+        <t>
 	  This document uses several placeholder values throughout the
 	  document. Please replace them as follows and remove this
 	  section before publication.
-	</t>
+        </t>
         <t>
 	  RFC XXXX, where XXXX is the number assigned to this document
 	  at the time of publication.
-	</t>
+        </t>
         <t>
 	  2025-10-30, with the actual date of the publication of this
 	  document.
-	</t>
+        </t>
       </section>
     </section>
-
-    <section title="Terminology">
+    <section>
+      <name>Terminology</name>
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-      "OPTIONAL" in this document are to be interpreted as described in <xref
-      target="RFC2119">RFC 2119</xref> and <xref target="RFC8174">RFC
+      "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC 2119</xref> and <xref target="RFC8174">RFC
       8174</xref>.</t>
-
       <t>
-	The reader is expected to be familiar with the <xref
-	target="RFC5880">BFD</xref>. In particular, the term
-	'meticulous' specified in <xref
-	target="I-D.ietf-bfd-secure-sequence-numbers">Meticulous Keyed
+	The reader is expected to be familiar with the <xref target="RFC5880">BFD</xref>. In particular, the term
+	'meticulous' specified in <xref target="I-D.ietf-bfd-secure-sequence-numbers">Meticulous Keyed
 	ISAAC for BFD Optimized Authentication</xref> means that the
 	Sequence number is incremented on every new packet that is
 	sent.
       </t>
     </section>
-
-    <section title="Use Cases">
+    <section>
+      <name>Use Cases</name>
       <t>
-	Bidirectional Forwarding Detection, as defined in <xref
-	target="RFC5880">BFD</xref> cannot detect any BFD packet loss
+	Bidirectional Forwarding Detection, as defined in <xref target="RFC5880">BFD</xref> cannot detect any BFD packet loss
 	if the loss does not last for the Detection Time. This
 	document proposes a method to detect dropped packets on the
 	receiver. For example, if the receiver receives BFD control
@@ -197,14 +178,12 @@
 	never receives packet k+1 and/or k+2, then it has experienced
 	a packet loss.
       </t>
-
       <t>This proposal enables BFD implementations to generate
 	diagnostic information on the health of each BFD session that
 	could be used to preempt probability of a failure on a
 	datapath that BFD was monitoring by allowing time for a
 	corrective action to be taken.
       </t>
-
       <t>
 	In a faulty datapath scenario, an operator can use BFD health
 	information to trigger the delay and loss measurement OAM
@@ -214,8 +193,8 @@
 	issue.
       </t>
     </section>
-
-    <section title="Functionality">
+    <section>
+      <name>Functionality</name>
       <t>
         BFD stability measurement requires that a BFD Meticulous Authentication
         type is configured.
@@ -233,8 +212,8 @@
         document.
       </t>
     </section>
-
-    <section anchor="null-auth-type" title="NULL Auth Type">
+    <section anchor="null-auth-type">
+      <name>NULL Auth Type</name>
       <t>
 	The NULL Authentication Type, defined in this document, can be
 	used to provide a meticulously increasing sequence number
@@ -242,14 +221,14 @@
 	It provides none of the protections desired for authentication
 	and is used only to provide BFD stability services to BFD
 	sessions that otherwise have no authentication in use.</t>
-
       <t>If the Authentication Present (A) bit is set in the header
       as defined in <xref target="RFC5880" section="4">BFD</xref>,
       and the Authentication Type field contains TBD, the
       Authentication section has the following format:
-      <figure
-          align="center" title="NULL Auth Type">
-        <artwork><![CDATA[
+      </t>
+      <figure>
+        <name>NULL Auth Type</name>
+        <artwork align="center"><![CDATA[
        0                   1                   2                   3
        0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -259,33 +238,27 @@
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       ]]></artwork>
       </figure>
+      <t>
       where:
       </t>
-
       <t>Auth Type (8 bits): The Authentication Type, which in this
 	case is TBD (NULL, to be assigned by IANA, with a suggested
 	value of 6).
       </t>
-
       <t>Auth Len (8 bits): The length of the NULL Auth Type, in bytes;
 	i.e., 8 bytes
       </t>
-
       <t>Auth Key ID (8 bits): The authentication key ID in use for this
 	packet. MUST be set to zero and MUST be ignored on receipt.
       </t>
-
       <t>Reserved (8 bits): This byte MUST be set to zero on transmit
 	and MUST be ignored on receipt.
       </t>
-
       <t>Sequence Number (32 bits): The sequence number for this
 	packet.  This value is incremented for each successive packet
 	transmitted for a session.  Implementations will use sequence
-	numbers (bfd.XmitAuthSeq) as defined in <xref
-	target="RFC5880">BFD</xref>.
+	numbers (bfd.XmitAuthSeq) as defined in <xref target="RFC5880">BFD</xref>.
       </t>
-
       <t>
 	If bfd.AuthSeqKnown is 1, and the received Sequence Number
 	field is not equal to bfd.RcvAuthSeq + 1 (in a circular number
@@ -293,19 +266,14 @@
 	between the received Sequence Number and bfd.RcvAuthSeq and
 	bfd.RcvAuthSeq is set to the received Sequence Number.
       </t>
-
       <t>
 	Otherwise (bfd.AuthSeqKnown is 0), bfd.AuthSeqKnown MUST be
 	set to 1, and bfd.RcvAuthSeq MUST be set to the value of the
-	received Sequence Number field as defined in <xref
-	target="RFC5880" sectionFormat="comma"
-	section="6.8.1">BFD</xref>, and the packet MUST
+	received Sequence Number field as defined in <xref target="RFC5880" sectionFormat="comma" section="6.8.1">BFD</xref>, and the packet MUST
 	be accepted.
       </t>
-
       <t>
-	According to <xref target="RFC5880" sectionFormat="comma"
-	section="6.7.3">BFD</xref> a receiver MUST discard a received
+	According to <xref target="RFC5880" sectionFormat="comma" section="6.7.3">BFD</xref> a receiver MUST discard a received
 	packet that lies outside the range of bfd.RcvAuthSeq and
 	bfd.RcvAuthSeq + (3 * Detect Multi). If it is within that
 	range, but is missing a packet, it can be used to detect a
@@ -319,14 +287,13 @@
 	discarding the BFD packets.
       </t>
     </section>
-
-    <section title="Theory of Operation">
+    <section>
+      <name>Theory of Operation</name>
       <t>This mechanism allows operators to measure the loss of BFD control
       packets.  A BFD authentication type carrying a meticulously increasing
       sequence number is required to support this loss measurement.
       Authentication types that provide for meticulously increasing sequence
       numbers include:</t>
-
       <ul>
         <li>
           Meticulously Keyed MD5 and SHA1, defined in
@@ -342,19 +309,16 @@
           defined in this document.
         </li>
       </ul>
-
       <t>
 	Other authentication types that provide for meticulously increasing
 	sequence numbers appropriate for this mechanism may be defined in future
 	specifications.
       </t>
-
-      <section title="Loss Measurement">
+      <section>
+        <name>Loss Measurement</name>
         <t>
 	  Loss measurement counts the number of BFD control packets
-	  missed at the receiver during any Detection Time <xref
-	  target="RFC5880" section="6.8.4"
-	  sectionFormat="comma">BFD</xref> period. The loss is detected
+	  missed at the receiver during any Detection Time <xref target="RFC5880" section="6.8.4" sectionFormat="comma">BFD</xref> period. The loss is detected
 	  by comparing the Sequence Number field in successive BFD
 	  control packets. The Sequence Number in each successive
 	  control packet generated on a BFD session by the transmitter
@@ -362,16 +326,15 @@
 	  using the YANG module defined in the subsequent section. See
 	  discussion on <xref target="out-of-order-packets">Out of
 	  Order Packets</xref> later in the document.
-	</t>
-
+        </t>
         <t>
 	  The first BFD authentication section with a non-zero
 	  sequence number, in a valid BFD control packet, processed by
 	  the receiver, is used for bootstrapping the logic.
-	</t>
+        </t>
       </section>
-
-      <section anchor="out-of-order-packets" title="Out of Order Packets">
+      <section anchor="out-of-order-packets">
+        <name>Out of Order Packets</name>
         <t>
 	  Some transmission mechanisms - for example, Link Aggregate Groups
 	  (LAG), or Equal Cost Multipath (ECMP) - can result in out of order
@@ -379,17 +342,18 @@
 	  are delivered out of order, strict comparison of increasing sequence
 	  numbers may result in classifying the out of order packets as packet
 	  loss.
-	</t>
-	<t>
+        </t>
+        <t>
 	  Implementations MAY provide mechanisms wherein all expected
 	  packets received across an expected interval, but delivered
 	  out of order are not considered lost packets.
-	</t>
+        </t>
       </section>
     </section>
-
-    <section anchor="yang-module" title="Stability YANG Module">
-      <section anchor="data-model-overview" title="Data Model Overview">
+    <section anchor="yang-module">
+      <name>Stability YANG Module</name>
+      <section anchor="data-model-overview">
+        <name>Data Model Overview</name>
         <t>
 	  This YANG module augments the base BFD YANG module to add
 	  attributes such as the flag 'stability' related
@@ -398,11 +362,8 @@
 	  Stability is supported by the implementation. In addition, a
 	  loss count per-session or lsp for BFD packets that are lost
 	  has also been added in this model.
-	</t>
-
-        <t>
-	  <figure>
-            <artwork><![CDATA[
+        </t>
+        <artwork><![CDATA[
 module: ietf-bfd-stability
 
   augment /rt:routing/rt:control-plane-protocols
@@ -446,25 +407,17 @@ module: ietf-bfd-stability
             /bfd-mpls:session-groups/bfd-mpls:session-group
             /bfd-mpls:sessions/bfd-mpls:session-statistics:
     +--ro lost-packet-count?   yang:counter64 {stability}?
-]]>
-	    </artwork>
-          </figure>
-	</t>
-      </section>
 
-      <section title="YANG Module">
+	    ]]></artwork>
+      </section>
+      <section>
+        <name>YANG Module</name>
         <t>
-	  This YANG module imports modules defined in <xref
-	  target="RFC6991">Common YANG Types</xref>, <xref
-	  target="RFC8349">A YANG Data Model for Routing</xref>, and
+	  This YANG module imports modules defined in <xref target="RFC6991">Common YANG Types</xref>, <xref target="RFC8349">A YANG Data Model for Routing</xref>, and
 	  <xref target="RFC9314">YANG Data Model for Bidirectional
 	  Forwading Detection (BFD)</xref>.
-	</t>
-
-        <t>
-	  <figure>
-            <artwork><![CDATA[
-	    <CODE BEGINS> file "ietf-bfd-stability@2025-10-30.yang"
+        </t>
+        <sourcecode markers="true" name="ietf-bfd-stability@2025-10-30.yang"><![CDATA[
 module ietf-bfd-stability {
   yang-version 1.1;
   namespace "urn:ietf:params:xml:ns:yang:ietf-bfd-stability";
@@ -725,71 +678,61 @@ module ietf-bfd-stability {
        stability for MPLS sessions.";
   }
 }
-	    <CODE ENDS>
-	    ]]>
-	    </artwork>
-          </figure>
-	</t>
+	    ]]></sourcecode>
       </section>
     </section>
-
-    <section title="IANA Considerations">
+    <section>
+      <name>IANA Considerations</name>
       <t>This document requests one new authentication type and
       registers one URIs in the "ns" subregistry of the "IETF XML"
       registry <xref target="RFC3688"/>.</t>
-
-      <section anchor="auth-type" title="Auth Type">
-	<t>
+      <section anchor="auth-type">
+        <name>Auth Type</name>
+        <t>
 	  This document requests an update to the registry titled "BFD
 	  Authentication Types". IANA is requested to assign a new
 	  BFD AuthType:
-	  <ul>
-	    <li>
+        </t>
+        <ul>
+          <li>
 	      NULL Auth Type, with a suggested value of 6.
 	    </li>
-	  </ul>
-	</t>
+        </ul>
       </section>
-      <section anchor="ietf-xml-registry" title="IETF XML Registry">
-	<t>Following the format in <xref target="RFC3688"/>, the following
+      <section anchor="ietf-xml-registry">
+        <name>IETF XML Registry</name>
+        <t>Following the format in <xref target="RFC3688"/>, the following
 	registrations are requested:</t>
-	<t>
-	  <figure>
-	    <artwork><![CDATA[URI: urn:ietf:params:xml:ns:yang:ietf-bfd-stability
+        <artwork><![CDATA[URI: urn:ietf:params:xml:ns:yang:ietf-bfd-stability
 Registrant Contact: The IESG
 XML: N/A, the requested URI is an XML namespace.
-]]>
-	    </artwork>
-	  </figure>
-	</t>
-      </section>
 
-      <section title="The &quot;YANG Module Names&quot; Registry">
+	    ]]></artwork>
+      </section>
+      <section>
+        <name>The "YANG Module Names" Registry</name>
         <t>
 	  This document registers one YANG module in the "YANG Module
 	  Names" registry <xref target="RFC6020"/>. Following the
 	  format in <xref target="RFC6020"/>, the following
 	  registrations are requested:
         </t>
-
-        <t><figure>
-            <artwork><![CDATA[
+        <artwork><![CDATA[
 name:         ietf-bfd-stability
 namespace:    urn:ietf:params:xml:ns:yang:ietf-bfd-stability
 prefix:       bfd-s
 reference:    RFC XXXX
 ]]></artwork>
-          </figure></t>
       </section>
     </section>
-
-    <section title="Security Considerations">
-      <section title="BFD NULL Auth Security Considerations">
-	<t>
+    <section>
+      <name>Security Considerations</name>
+      <section>
+        <name>BFD NULL Auth Security Considerations</name>
+        <t>
 	  The use of a BFD authentication mechanism that protects the
 	  BFD packets is RECOMMENDED.
-	</t>
-
+        </t>
         <t>
 	  The Security Considerations of <xref target="RFC5880"/> for
 	  unauthenticated BFD all apply to the new NULL authentication
@@ -799,16 +742,14 @@ reference:    RFC XXXX
 	  sessions that otherwise would not use authentication, a
 	  sequence number that can be used for purposes of detecting
 	  lost packets.
-	</t>
-
-	<t>
+        </t>
+        <t>
 	  The lack of a computed AuthKey/Digest over the BFD packet,
 	  but the presence of a Sequence Number makes this
 	  authentication type susceptible to injection attacks.  BFD
 	  without authentication is vulnerable to session resets; the
 	  NULL Auth type does not change this.</t>
-
-	<t>
+        <t>
 	  When the NULL Authentication type is used for BFD Stability
 	  purposes, maliciously injected packets that do not reset the
 	  BFD session can resemble high packet loss. Sessions such as
@@ -816,60 +757,51 @@ reference:    RFC XXXX
 	  MPLS LSP, therefore, have security guarantees that are
 	  identical to situations where BFD is run without
 	  authentication.
-	</t>
+        </t>
       </section>
-      <section title="YANG Security Considerations">
-	<t>
+      <section>
+        <name>YANG Security Considerations</name>
+        <t>
 	  The YANG module specified in this document defines a schema
 	  for data that is designed to be accessed via network
-	  management protocols such as <xref
-	  target="RFC6241">NETCONF</xref> or <xref
-	  target="RFC8040">RESTCONF</xref>. These YANG-based
+	  management protocols such as <xref target="RFC6241">NETCONF</xref> or <xref target="RFC8040">RESTCONF</xref>. These YANG-based
 	  management protocols have to use a secure transport layer
-	  (e.g., <xref target="RFC4252">SSH</xref>, <xref
-	  target="RFC8446">TLS</xref>, and <xref
-	  target="RFC9000">QUIC</xref>) and have to use mutual
+	  (e.g., <xref target="RFC4252">SSH</xref>, <xref target="RFC8446">TLS</xref>, and <xref target="RFC9000">QUIC</xref>) and have to use mutual
 	  authentication.
-	</t>
-	<t>
+        </t>
+        <t>
 	  The <xref target="RFC8341">NETCONF Access Control Model
 	  (NACM)</xref> provides the means to restrict access for
 	  particular NETCONF or RESTCONF users to a preconfigured
 	  subset of all available NETCONF or RESTCONF protocol
 	  operations and content.
-	</t>
-
-	<t>
+        </t>
+        <t>
 	  The YANG module does not define any
 	  writeable/creatable/deletable data nodes that can have an
 	  adverse impact on a BFD session.
-	</t>
-
-	<t>
+        </t>
+        <t>
 	  The only readable data nodes in YANG module may be considered
 	  sensitive or vulnerable in some network environments. It is
 	  thus important to control read access (e.g., via get,
 	  get-config, or notification) to these data nodes.
-	</t>
-
-	<t>
+        </t>
+        <t>
 	  The model defines a read-only node to indicate the number of
 	  packets that were lost. Access to this information may allow
 	  a malicious user information on which links are experiencing
-	  issues. In addition, and as stated in <xref
-	  target="out-of-order-packets">Out of Order Packets</xref>,
+	  issues. In addition, and as stated in <xref target="out-of-order-packets">Out of Order Packets</xref>,
 	  on links such as LAG or ECMP, there is a possibility of
 	  packets being delivered out-of-order. A strict comparison of
 	  increasing sequence numbers may result in classifying those
 	  out of order packets as packet loss.
-	</t>
-
-	<t>The YANG module does not define any RPC operations.</t>
+        </t>
+        <t>The YANG module does not define any RPC operations.</t>
       </section>
     </section>
-
-
-    <section title="Contributors">
+    <section>
+      <name>Contributors</name>
       <t>
 	The authors of this document would like to acknowledge Jeff
 	Haas as a contributor to this document. His contribution lead
@@ -877,8 +809,8 @@ reference:    RFC XXXX
 	Manav Bhatia contributed to this document.
       </t>
     </section>
-
-    <section title="Acknowledgements">
+    <section>
+      <name>Acknowledgements</name>
       <t>
 	Authors would like to thank Nobo Akiya, Dileep Singh, Basil
 	Saji, Sagar Soni, Albert Fu, Peng Fang, and Mallik Mudigonda
@@ -891,58 +823,51 @@ reference:    RFC XXXX
       </t>
     </section>
   </middle>
-
   <back>
-    <references title="Normative References">
-      <?rfc include='reference.RFC.2119.xml'?>
-
-      <?rfc include='reference.RFC.3688.xml'?>
-
-      <?rfc include='reference.RFC.4252.xml'?>
-
-      <?rfc include='reference.RFC.5880.xml'?>
-
-      <?rfc include='reference.RFC.6020.xml'?>
-
-      <?rfc include='reference.RFC.6991.xml'?>
-
-      <?rfc include='reference.RFC.8174.xml'?>
-
-      <?rfc include='reference.RFC.8341.xml'?>
-
-      <?rfc include='reference.RFC.8349.xml'?>
-
-      <?rfc include='reference.RFC.9314.xml'?>
-    </references>
-    <references title="Informative References">
-      <?rfc include='reference.RFC.6241.xml'?>
-      <?rfc include='reference.RFC.6374.xml'?>
-      <?rfc include='reference.RFC.8040.xml'?>
-      <?rfc include='reference.RFC.8446.xml'?>
-      <?rfc include='reference.RFC.9000.xml'?>
-      <?rfc include='reference.I-D.ietf-bfd-secure-sequence-numbers.xml'?>
-      <reference anchor="Y-1731">
-        <front>
-          <title>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Normative References</name>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3688.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4252.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5880.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6020.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6991.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8341.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8349.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9314.xml"/>
+      </references>
+      <references>
+        <name>Informative References</name>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6241.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6374.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8040.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8446.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9000.xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-bfd-secure-sequence-numbers.xml"/>
+        <reference anchor="Y-1731">
+          <front>
+            <title>
 	    OAM Functions and Mechanisms for Ethernet-based Networks
-	  </title>
-          <author>
-            <organization>ITU-T</organization>
-          </author>
-	  <date month="November" year="2013"/>
-	</front>
-	<seriesInfo name="Recommendation" value="G.8013/Y.1731"/>
-      </reference>
-
+            </title>
+            <author>
+              <organization>ITU-T</organization>
+            </author>
+            <date month="November" year="2013"/>
+          </front>
+          <seriesInfo name="Recommendation" value="G.8013/Y.1731"/>
+        </reference>
+      </references>
     </references>
-    <section anchor="experimental-status" title="Experimental Status">
+    <section anchor="experimental-status">
+      <name>Experimental Status</name>
       <t>
 	This document describes an experiment that will present a
-	candidate solution to predict whether a given <xref
-	target="RFC5880">BFD</xref> session will continue to be
+	candidate solution to predict whether a given <xref target="RFC5880">BFD</xref> session will continue to be
 	stable. The experiment will use the packet lost count and the
-	'received-packet-count' defined in the <xref
-	target="RFC9314">YANG Data Model for Bidirectional Forward
+	'received-packet-count' defined in the <xref target="RFC9314">YANG Data Model for Bidirectional Forward
 	Detection (BFD)</xref> to determine how stable is the
 	session. The reason why this document is on an
 	Experimental track is because there are no known
@@ -956,20 +881,20 @@ reference:    RFC XXXX
 	the IETF Standards Track.
       </t>
     </section>
-    <section anchor="examples" title="Examples">
+    <section anchor="examples">
+      <name>Examples</name>
       <t>
 	This section tries to show some examples in how the model can
 	be configured for stability.
       </t>
-      <section anchor="example-a.1.1" title="Single Hop BFD Configuration">
-	<t>
+      <section anchor="example-a.1.1">
+        <name>Single Hop BFD Configuration</name>
+        <t>
           This example demonstrates how a Single Hop BFD session can
           be configured to enable monitoring of a session for
           stability.
-	</t>
-	<t>
-          <figure>
-            <artwork><![CDATA[
+        </t>
+        <artwork><![CDATA[
 =============== NOTE: '\' line wrapping per RFC 8792 ===============
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1036,19 +961,16 @@ al>
     </control-plane-protocol>
   </control-plane-protocols>
 </routing>
-            ]]>
-            </artwork>
-          </figure>
-	</t>
+            
+            ]]></artwork>
       </section>
-            <section anchor="example-a.1.2" title="Use of NULL Auth">
-	<t>
+      <section anchor="example-a.1.2">
+        <name>Use of NULL Auth</name>
+        <t>
           This example demonstrates how to configure NULL Auth
           to enable monitoring of a session for stability.
-	</t>
-	<t>
-          <figure>
-            <artwork><![CDATA[
+        </t>
+        <artwork><![CDATA[
 =============== NOTE: '\' line wrapping per RFC 8792 ===============
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1116,10 +1038,8 @@ al>
     </control-plane-protocol>
   </control-plane-protocols>
 </routing>
-            ]]>
-            </artwork>
-          </figure>
-	</t>
+            
+            ]]></artwork>
       </section>
     </section>
   </back>
