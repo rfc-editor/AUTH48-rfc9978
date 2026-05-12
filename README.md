@@ -1,6 +1,6 @@
 # AUTH48 for RFC-to-be 9978 <draft-XX> (in XML)
 
-This repository is for managing document updates for RFC 9978 during AUTH48. This is part of the [pilot GitHub-based process for AUTH48](https://www.rfc-editor.org/rpc/wiki/doku.php?id=rpc_github_roadmap), and it emulates the [current AUTH48 procedure](https://www.rfc-editor.org/pubprocess/auth48/). 
+This repository is for managing document updates for RFC 9978 during AUTH48. This is part of the [pilot GitHub-based process for AUTH48](https://www.rfc-editor.org/rpc/wiki/doku.php?id=rpc_github_roadmap), and it emulates the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process). 
 
 Please see the [License](https://github.com/rfc-editor/rfc9978-AUTH48/blob/main/LICENSE.md). The [IETF Note Well](https://github.com/rfc-editor/rfc9978-AUTH48/blob/main/note-well.md) applies.
 
@@ -14,7 +14,7 @@ Authors, AD, WG chairs, and document shepherd, please ensure that your GitHub no
 This document is being edited in RFCXML.  Your approval means you approve both the content and format of the document, and the RFC is ready for publication.
 
 ## Pull Requests and Issue Tracking
-The initial version of rfc9978.xml is a copy of the Internet-Draft (in XML) as it was approved for publication. A PR has been created that contains all the edits made by the RFC Production Center. This emulates the starting state of the [current AUTH48 procedure](https://www.rfc-editor.org/pubprocess/auth48/). For the issues, provide your answers in the comments or add PRs to address them.  
+The initial version of rfc9978.xml is a copy of the Internet-Draft (in XML) as it was approved for publication. A PR has been created that contains all the edits made by the RFC Production Center. This emulates the starting state of the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process). For the issues, provide your answers in the comments or add PRs to address them.  
 
 Feel free to add new issues and PRs for new edits and questions. Use @mention to identify the participant who should answer.
 
@@ -58,4 +58,4 @@ For any questions or concerns, please contact rfc-editor@rfc-editor.org and CC a
 Note that push events will send notification messages to auth48archive@rfc-editor.org. 
 
 ## Reverting to the Email-based AUTH48 Process
-If for some reason a participant (including the RPC) wants to stop using GitHub and wants to use the [current AUTH48 procedure](https://www.rfc-editor.org/pubprocess/auth48/), this can be accomodated. We have structured the repo and the pilot process to align with the current process and we can transition the AUTH48 from GitHub to email.  
+If for some reason a participant (including the RPC) wants to stop using GitHub and wants to use the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process), this can be accomodated. We have structured the repo and the pilot process to align with the current process and we can transition the AUTH48 from GitHub to email.  
