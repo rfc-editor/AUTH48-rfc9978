@@ -854,9 +854,9 @@ Updated XML for [Y-1731]
 	be configured for stability.
       </t>
       <section anchor="example-a.1.1">
-        <name>Single-Hop BFD Configuration</name>
+        <name>Single Hop BFD Configuration</name>
         <t>
-          This example demonstrates how a single-hop BFD session can
+          This example demonstrates how a single hop BFD session can
           be configured to enable monitoring of a session for
           stability.
         </t>
