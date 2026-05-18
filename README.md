@@ -11,51 +11,54 @@ GitHub features that will be used:
 
 Authors, AD, WG chairs, and document shepherd, please ensure that your GitHub notification settings are set such that you can participate promptly in discussions of issues and pull requests. For more information, please see [Configuring notifications](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications).  
 
-This document is being edited in RFCXML.  Your approval means you approve both the content and format of the document, and the RFC is ready for publication.
-
 ## Pull Requests and Issue Tracking
-The initial version of rfc9978.xml is a copy of the Internet-Draft (in XML) as it was approved for publication. A PR has been created that contains all the edits made by the RFC Production Center. This emulates the starting state of the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process). For the issues, provide your answers in the comments or add PRs to address them.  
+The initial version of rfc9978.xml is a copy of the Internet-Draft (in XML) as it was approved for publication. A PR has been created that contains all the edits made by the RFC Production Center. This emulates the starting state of the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process). 
 
-Feel free to add new issues and PRs for new edits and questions. Use @mention to identify the participant who should answer.
+The edits made by the RPC appear in the RPC-edits branch.  Please work within this branch as much as possible.  In particular, use the [comment and suggestion](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request) features to comment or suggest updates.  
 
-For any PRs created by the RFC Production Center, the editor expects feedback from at least one reviewer before merging the PR. We expect the other relevant parties will speak up if they disagree with any update.
+For the Issues, please either reply in the comments how the item should be resolved or submit a pull request against the RPC-edits branch with the suggested fix.  If you choose to create a new pull request, please identify the issue it resolves in the comments.  The RFC Editor will close the issue when it has been addressed by either accepting a pull request or simply closing the issue if no changes are needed.
 
-The RFC Editor will close the issue when it has been addressed either by accepting a pull request or simply closing the issue if no changes are needed.  
+Feel free to add new issues and pull requests for new edits and questions. Use @mention to identify the participant who should answer.
 
-## Pull Requests
-If you would like to submit changes, please create a pull request and identify one or more issues that the pull request closes in the comments. 
+Note: For both comments and issues, please DO NOT use emojis to approve or disprove changes.
 
-If the RFC Editor creates the PR in response to issue comments, the RFC Editor will assign a reviewer for the PR and will expect feedback from the reviewer before merging the PR. 
+For any pull requests created by the RFC Production Center, the editor expects feedback from at least one reviewer before merging the pull request. We expect the other relevant parties will speak up if they disagree with any update. 
 
-In addition to the files available in GitHub, the following files are available for your review:
+## Viewing Output Files and Diffs
+
+Information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
+
+In addition to the files available in GitHub, the following edited files are available for your review:
 
 * [https://www.rfc-editor.org/authors/rfc9978.html](https://www.rfc-editor.org/authors/rfc9978.html)
 * [https://www.rfc-editor.org/authors/rfc9978.pdf](https://www.rfc-editor.org/authors/rfc9978.pdf)
 * [https://www.rfc-editor.org/authors/rfc9978.txt](https://www.rfc-editor.org/authors/rfc9978.txt)
 * [https://www.rfc-editor.org/authors/rfc9978.xml](https://www.rfc-editor.org/authors/rfc9978.xml)
 
-To create your own output files, use the [IETF Author Tools webservice](https://author-tools.ietf.org/).
-
-## Viewing Diffs
-Information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
-
-The following diff files are available via www.rfc-editor.org:
+The following diff files are also available via www.rfc-editor.org:
 * [https://www.rfc-editor.org/authors/rfc9978-diff.html](https://www.rfc-editor.org/authors/rfc9978-diff.html) (all changes since the document entered the RFC Editor Queue)
 * [https://www.rfc-editor.org/authors/rfc9978-rfcdiff.html](https://www.rfc-editor.org/authors/rfc9978-rfcdiff.html) (side-by-side view of all changes since the document entered the RFC Editor Queue)
+  
+To create your own output files, use the [IETF Author Tools webservice](https://author-tools.ietf.org/).
 
 ## Approving the Document
-**Authors** To approve your RFC for publication, **please reply to the AUTH48 email** stating that you approve this RFC for publication.  Please use **REPLY ALL**, as all the parties CC’ed on the message need to see your approval.
 
-**ADs** - To approve any changes that are beyond editorial, **please reply to the AUTH48 email** (using **REPLY ALL**) so everyone is aware of the approval.  
+Once the content is stable in GitHub, the RPC will send an email with links to the .html, .pdf, .txt, and .xml files and request final approval of the document.  Your final approval means that you approve both the content and format and that the RFC is ready for publication.
+
+Authors should send approval by email as indicated below.
+
+**Authors** - To approve your RFC for publication, **please reply to the email requesting approval** stating that you approve this RFC for publication.  Please use **REPLY ALL**, as all the parties CC’ed on the message need to see your approval.
+
+**ADs** - To approve any changes that are beyond editorial, **please reply to the email requesting approval** (using **REPLY ALL**) so everyone is aware of the approval.
 
 The details of the AUTH48 status of the document are here: [https://www.rfc-editor.org/auth48/rfc9978](https://www.rfc-editor.org/auth48/rfc9978)
 
 ## About This Repo
 Note that this repo is available only during AUTH48. This repo will be archived after the RFC publication announcement is sent. 
 
+## Reverting to the Email-based AUTH48 Process
+If for some reason a participant (including the RPC) wants to stop using GitHub and wants to use the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process), this can be accomodated. We have structured the repo and the pilot process to align with the current process and we can transition the AUTH48 from GitHub to email.
+
 ## Contacting the RFC Editor
 For any questions or concerns, please contact rfc-editor@rfc-editor.org and CC auth48archive@rfc-editor.org. 
 Note that push events will send notification messages to auth48archive@rfc-editor.org. 
-
-## Reverting to the Email-based AUTH48 Process
-If for some reason a participant (including the RPC) wants to stop using GitHub and wants to use the [current AUTH48 procedure](https://authors.ietf.org/en/rfc-publication-process), this can be accomodated. We have structured the repo and the pilot process to align with the current process and we can transition the AUTH48 from GitHub to email.  
