@@ -62,7 +62,15 @@
     <date month="May" year="2026"/>
     <area>RTG</area>
     <workgroup>bfd</workgroup>
-
+	<keyword>packet loss</keyword>
+	<keyword>lost packet</keyword>
+	<keyword>loss measurement</keyword>
+	<keyword>dropped packets</keyword>
+	<keyword>out-of-order packets</keyword>
+	<keyword>data loss</keyword>
+	<keyword>datapath failure</keyword>
+	<keyword>fault detection</keyword>
+ 	<keyword>meticulously increasing sequence number</keyword>
     <abstract>
       <t>
 	This document describes extensions to the Bidirectional
