@@ -809,20 +809,6 @@ IESG State: RFC-ED queue
 Check if RFC number is available when this doc completes AUTH48. -->
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-bfd-secure-sequence-numbers.xml"/>
 
-        <reference anchor="Y-1731" target="https://www.itu.int/rec/T-REC-G.8013-201311-S/en">
-          <front>
-            <title>OAM functions and mechanisms for Ethernet based networks
-            </title>
-            <author>
-              <organization>ITU-T</organization>
-            </author>
-            <date month="November" year="2013"/>
-          </front>
-          <seriesInfo name="ITU-T Recommendation" value="G.8013/Y.1731"/>
-        </reference>
-
-<!-- potential ref update
-Updated XML for [Y-1731]
         <reference anchor="Y-1731" target="https://www.itu.int/rec/T-REC-G.8013-202306-I/en">
           <front>
             <title>Operation, administration and maintenance (OAM) functions and mechanisms for Ethernet-based networks	
@@ -834,8 +820,8 @@ Updated XML for [Y-1731]
           </front>
           <seriesInfo name="ITU-T Recommendation" value="G.8013/Y.1731"/>
         </reference>
--->
-      </references>
+
+	  </references>
     </references>
     <section anchor="experimental-status">
       <name>Experimental Status</name>
