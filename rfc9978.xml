@@ -99,7 +99,7 @@
 
       <t>
 	This document proposes an experimental mechanism to detect
-	packet loss in a BFD session in addition to the datapath
+	packet loss in a BFD session and describes the datapath
 	fault detection mechanisms of BFD.  Such a mechanism, combined
 	with 'received-packet-count' defined in "YANG Data Model for Bidirectional Forwarding Detection (BFD)" <xref target="RFC9314"/> permits operators to measure the
 	stability of BFD sessions. The details of the motivation for
