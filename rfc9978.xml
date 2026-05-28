@@ -185,7 +185,7 @@
       <t>
 	The NULL authentication type, defined in this document, can be
 	used to provide a meticulously increasing sequence number
-	BFD <xref target="RFC5880"/> for stability measurement.
+	<xref target="RFC5880"/> for stability measurement.
 	It provides none of the protections desired for authentication
 	and is used only to provide BFD stability services to BFD
 	sessions that otherwise have no authentication in use.</t>
@@ -841,7 +841,7 @@ Updated XML for [Y-1731]
 
       <t>
 	This document describes an experiment that will present a
-	candidate solution to predict whether a given BFD <xref target="RFC5880"/> session will continue to be
+	candidate solution to predict whether a given BFD session <xref target="RFC5880"/> will continue to be
 	stable. The experiment will use the packet lost count and the
 	'received-packet-count' defined in "YANG Data Model for Bidirectional Forwarding Detection (BFD)" <xref target="RFC9314"/> to determine how stable the
 	session is. The reason this document is on the Experimental track is because there are no known
