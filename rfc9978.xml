@@ -91,7 +91,7 @@
 
       <t>
 	This document proposes an experimental mechanism to detect
-	lost packets in a BFD session in addition to the datapath
+	packet loss in a BFD session in addition to the datapath
 	fault detection mechanisms of BFD.  Such a mechanism, combined
 	with 'received-packet-count' defined in "YANG Data Model for Bidirectional Forwarding Detection (BFD)" <xref target="RFC9314"/> permits operators to measure the
 	stability of BFD sessions. The details of the motivation for
@@ -675,9 +675,9 @@ module ietf-bfd-stability {
 	  authenticating BFD packets.  It is intended to provide BFD
 	  sessions that otherwise would not use authentication with a
 	  sequence number that can be used for the purpose of detecting
-	  lost packets.
-        </t>
-        <t>
+	  packet loss.
+		</t>
+		<t>
 	  The lack of a computed AuthKey/Digest over the BFD packet,
 	  but the presence of a sequence number, makes this
 	  authentication type susceptible to injection attacks.  BFD
