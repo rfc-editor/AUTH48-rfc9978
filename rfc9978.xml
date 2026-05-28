@@ -321,7 +321,7 @@
 	  to the experiment of BFD stability. The feature statement
 	  'stability' needs to be enabled to indicate that BFD
 	  stability is supported by the implementation. In addition, a
-	  loss count per-session or lsp for BFD packets that are lost
+	  loss count per-session or a Label Switched Path (LSP) for BFD packets that are lost
 	  has also been added in this model.
         </t>
         <sourcecode type="yangtree"><![CDATA[
