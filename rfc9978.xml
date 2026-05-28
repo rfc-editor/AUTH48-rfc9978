@@ -183,7 +183,7 @@
     <section anchor="null-auth-type">
       <name>NULL Auth Type</name>
       <t>
-	The NULL authentication type, defined in this document, can be
+	The NULL Auth Type, defined in this document, can be
 	used to provide a meticulously increasing sequence number
 	<xref target="RFC5880"/> for stability measurement.
 	It provides none of the protections desired for authentication
@@ -480,7 +480,7 @@ module ietf-bfd-stability {
   identity null-auth {
     base key-chain:crypto-algorithm;
     description
-      "BFD NULL Auth type defined in this document.";
+      "BFD NULL Auth Type defined in this document.";
     reference
       "RFC 9978: Bidirectional Forwarding Detection (BFD) Stability";
   }
@@ -670,15 +670,15 @@ module ietf-bfd-stability {
     <section>
       <name>Security Considerations</name>
       <section>
-        <name>BFD NULL Auth Security Considerations</name>
+        <name>BFD NULL Auth Type Security Considerations</name>
         <t>
 	  The use of a BFD authentication mechanism that protects the
 	  BFD packets is <bcp14>RECOMMENDED</bcp14>.
         </t>
         <t>
 	  The security considerations of <xref target="RFC5880"/> for
-	  unauthenticated BFD all apply to the new NULL authentication
-	  type.  The NULL authentication type, defined in this
+	  unauthenticated BFD all apply to the new NULL Auth
+	  Type.  The NULL Auth Type, defined in this
 	  document, provides none of the properties desired for
 	  authenticating BFD packets.  It is intended to provide BFD
 	  sessions that otherwise would not use authentication with a
@@ -690,9 +690,9 @@ module ietf-bfd-stability {
 	  but the presence of a sequence number, makes this
 	  authentication type susceptible to injection attacks.  BFD
 	  without authentication is vulnerable to session resets; the
-	  NULL Auth type does not change this.</t>
+	  NULL Auth Type does not change this.</t>
         <t>
-	  When the NULL authentication type is used for BFD stability
+	  When the NULL Auth Type is used for BFD stability
 	  purposes, maliciously injected packets that do not reset the
 	  BFD session can resemble high packet loss. Sessions such as
 	  multi-hop routed paths, tunnels without authentication, or
@@ -924,9 +924,9 @@ al>
 </routing>]]></sourcecode>
       </section>
       <section anchor="example-a.1.2">
-        <name>Use of NULL Auth</name>
+        <name>Use of the NULL Auth Type</name>
         <t>
-          This example demonstrates how to configure NULL Auth
+          This example demonstrates how to configure the NULL Auth Type
           to enable monitoring of a session for stability.
         </t>
         <sourcecode><![CDATA[
