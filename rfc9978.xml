@@ -318,7 +318,7 @@
         <t>
 	  This YANG module augments the base BFD YANG module to add
 	  attributes such as the 'stability' flag related
-	  to the experiment of BFD stability. The feature statement
+	  to the experiment of BFD Stability. The feature statement
 	  'stability' needs to be enabled to indicate that BFD
 	  stability is supported by the implementation. In addition, a
 	  loss count per-session or a Label Switched Path (LSP) for BFD packets that are lost
@@ -441,7 +441,7 @@ module ietf-bfd-stability {
               Mach Chen (mach.chen@huawei.com).";
   description
     "This YANG module augments the base BFD YANG data model to add
-     experimental attributes related to BFD stability.
+     experimental attributes related to BFD Stability.
      In particular, it adds a per-session count for BFD packets
      that are lost.
 
@@ -864,7 +864,7 @@ Check if RFC number is available when this doc completes AUTH48. -->
     xmlns:kc="urn:ietf:params:xml:ns:yang:ietf-key-chain">
   <key-chain>
     <name>bfd-stability-config</name>
-    <description>"An example for BFD stabilized configuration."</de\
+    <description>"An example for BFD Stability configuration."</de\
 scription>
     <key>
       <key-id>55</key-id>
