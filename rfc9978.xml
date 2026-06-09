@@ -163,18 +163,18 @@
       <name>Functionality</name>
 
       <t>
-        BFD stability measurement requires that a BFD Meticulous authentication
+        BFD Stability measurement requires that a BFD Meticulous authentication
         type be configured.
       </t>
       <t>
         The "ietf-bfd-stability" YANG data model, defined in this document, provides
-        the ability to configure the BFD stability measurement for BFD sessions by
+        the ability to configure the BFD Stability measurement for BFD sessions by
         configuring the 'stability' flag. The 'lost&nbhy;packet&nbhy;count' leaf permits
         monitoring of stability issues as defined in this document for BFD
         sessions that have the 'stability' flag enabled.
       </t>
       <t>
-        The configuration of the BFD stability measurement and monitoring using
+        The configuration of the BFD Stability measurement and monitoring using
         other methods than the attached YANG data model is out of scope of this
         document.
       </t>
@@ -187,7 +187,7 @@
 	used to provide a meticulously increasing sequence number
 	<xref target="RFC5880"/> for stability measurement.
 	It provides none of the protections desired for authentication
-	and is used only to provide BFD stability services to BFD
+	and is used only to provide BFD Stability services to BFD
 	sessions that otherwise have no authentication in use.</t>
       <t>If the Authentication Present (A) bit is set in the header
       as defined in <xref target="RFC5880" sectionFormat="of" section="4"/>,
@@ -496,7 +496,7 @@ module ietf-bfd-stability {
          stability is configured.";
     }
     description
-      "Grouping of statistics related to BFD stability.";
+      "Grouping of statistics related to BFD Stability.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -692,7 +692,7 @@ module ietf-bfd-stability {
 	  without authentication is vulnerable to session resets; the
 	  NULL Auth Type does not change this.</t>
         <t>
-	  When the NULL Auth Type is used for BFD stability
+	  When the NULL Auth Type is used for BFD Stability
 	  purposes, maliciously injected packets that do not reset the
 	  BFD session can resemble high packet loss. Sessions such as
 	  multi-hop routed paths, tunnels without authentication, or
@@ -939,7 +939,7 @@ al>
 ">
   <key-chain>
     <name>bfd-stability-config</name>
-    <description>"An example for BFD stability configuration."</des\
+    <description>"An example for BFD Stability configuration."</des\
 cription>
     <key>
       <key-id>55</key-id>
