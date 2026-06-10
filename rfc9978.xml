@@ -75,7 +75,7 @@
       <t>
 	This document describes extensions to the Bidirectional
 	Forwarding Detection (BFD) protocol to measure BFD
-	stability. Specifically, it describes a mechanism for
+	Stability. Specifically, it describes a mechanism for
 	the detection of BFD packet loss.</t>
     </abstract>
   </front>
@@ -320,7 +320,7 @@
 	  attributes such as the 'stability' flag related
 	  to the experiment of BFD Stability. The feature statement
 	  'stability' needs to be enabled to indicate that BFD
-	  stability is supported by the implementation. In addition, a
+	  Stability is supported by the implementation. In addition, a
 	  loss count per-session or a Label Switched Path (LSP) for BFD packets that are lost
 	  has also been added in this model.
         </t>
@@ -515,7 +515,7 @@ module ietf-bfd-stability {
     }
     description
       "Augment the 'bfd' container to add attributes related to BFD
-       stability for IP Single Hop sessions.";
+       Stability for IP Single Hop sessions.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -534,7 +534,7 @@ module ietf-bfd-stability {
     }
     description
       "Augment the 'bfd' container to add attributes related to BFD
-       stability for Multi Hop sessions.";
+       Stability for Multi Hop sessions.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -553,7 +553,7 @@ module ietf-bfd-stability {
     }
     description
       "Augment the 'bfd' container to add attributes related to BFD
-       stability for LAG session.";
+       Stability for LAG session.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -572,7 +572,7 @@ module ietf-bfd-stability {
     }
     description
       "Augment the 'bfd' container to add attributes related to BFD
-       stability for MPLS.";
+       Stability for MPLS.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -582,7 +582,7 @@ module ietf-bfd-stability {
     uses lost-packet-count;
     description
       "Augment the 'bfd' container to add statistics related to BFD
-       stability for IP Single Hop sessions.";
+       Stability for IP Single Hop sessions.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -592,7 +592,7 @@ module ietf-bfd-stability {
     uses lost-packet-count;
     description
       "Augment the 'bfd' container to add statistics related to BFD
-       stability for IP Multi Hop sessions.";
+       Stability for IP Multi Hop sessions.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -602,7 +602,7 @@ module ietf-bfd-stability {
     uses lost-packet-count;
     description
       "Augment the 'bfd' container to add statistics related to BFD
-       stability for Micro BFD sessions for IPv4.";
+       Stability for Micro BFD sessions for IPv4.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -612,7 +612,7 @@ module ietf-bfd-stability {
     uses lost-packet-count;
     description
       "Augment the 'bfd' container to add statistics related to BFD
-       stability for Micro BFD sessions for IPv6.";
+       Stability for Micro BFD sessions for IPv6.";
   }
 
   augment "/rt:routing/rt:control-plane-protocols/"
@@ -622,7 +622,7 @@ module ietf-bfd-stability {
     uses lost-packet-count;
     description
       "Augment the 'bfd' container to add statistics related to BFD
-       stability for MPLS sessions.";
+       Stability for MPLS sessions.";
   }
 }]]></sourcecode>
       </section>
